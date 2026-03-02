@@ -1,4 +1,12 @@
-# 一文拆透：龙虾 Agent 的 7 大核心子系统
+---
+author: AK27
+title: "一文拆透：龙虾 Agent 的 7 大核心子系统"
+date: 2026-02-28
+draft: false
+tags: ["龙虾", "Agent"]
+categories: ["技术"]
+ShowToc: true
+---
 
 大家好，我是算法工程笔记。
 

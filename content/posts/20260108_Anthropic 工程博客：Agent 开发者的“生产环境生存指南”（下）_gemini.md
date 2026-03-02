@@ -1,3 +1,13 @@
+---
+author: AK27
+title: "Anthropic 工程博客：Agent 开发者的生产环境生存指南（下）"
+date: 2026-01-09
+draft: false
+tags: ["AI", "Agent", "Anthropic", "LLM", "工具链"]
+categories: ["技术"]
+ShowToc: true
+---
+
 大家好，我是算法工程笔记。
 
 在上一篇中，我们探讨了 Agent 的核心模式、Think Tool 以及多 Agent 协作架构。今天这**下篇**，我们将深入到更底层的工程基建，聊聊 **SDK、上下文工程、MCP** 以及如何构建长期运行的 Agent 系统。
