@@ -20,12 +20,3 @@ window.onload = () => {
     window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 }
 </script>
-
-<!-- 引入自定义字体CSS -->
-{{ if hugo.IsProduction }}
-  {{ $customFont := resources.Get "css/custom-font.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $customFont.RelPermalink }}" integrity="{{ $customFont.Data.Integrity }}">
-{{ else }}
-  {{ $customFont := resources.Get "css/custom-font.css" }}
-  <link rel="stylesheet" href="{{ $customFont.RelPermalink }}">
-{{ end }}
