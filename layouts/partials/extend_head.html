@@ -3,20 +3,41 @@
 <script>
 // 自定义mermaid配置
 const config = {
-    startOnLoad:true,
-    theme: 'forest',
+    startOnLoad: true,
+    // 1. 将主题改为 dark 以匹配 PaperMod 的深色代码块
+    theme: 'dark', 
     themeVariables: {
-        lineColor: "#fafafa"    // 由于paperMod的代码块背景是黑色的，这里将线条设置为白色
+        // 2. 线条颜色：使用更亮但不过于刺眼的浅灰色
+        lineColor: "#BBBBBB",
+        // 3. 节点边框颜色
+        nodeBorder: "#777777",
+        // 4. 节点背景色：深灰色，与纯黑背景形成层次感
+        mainBkg: "#2d2d2d",
+        // 5. 字体颜色：确保文字清晰可见
+        primaryTextColor: "#e0e0e0",
+        // 6. 箭头颜色
+        tertiaryColor: "#BBBBBB"
     },
     flowchart: {
-        useMaxWidth:false,
-        htmlLabels:true
-        }
+        useMaxWidth: false,
+        htmlLabels: true,
+        curve: 'basis' // 可选：让线条看起来更圆滑
+    }
 };
+
 mermaid.initialize(config);
-// 需要注意的是，要将初始化代码放到 window.onload 回调函数里面才有用
-// 否则会因为在html元素加载前进行初始化，找不到元素而失效
+
 window.onload = () => {
+    // 确保在深色背景下初始化
     window.mermaid.init(undefined, document.querySelectorAll('.language-mermaid'));
 }
 </script>
+
+<!-- 引入自定义字体CSS -->
+{{ if hugo.IsProduction }}
+  {{ $customFont := resources.Get "css/custom-font.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $customFont.RelPermalink }}" integrity="{{ $customFont.Data.Integrity }}">
+{{ else }}
+  {{ $customFont := resources.Get "css/custom-font.css" }}
+  <link rel="stylesheet" href="{{ $customFont.RelPermalink }}">
+{{ end }}
