@@ -3,15 +3,17 @@ languageCode: zh-cn
 title: 算法工程笔记
 theme: ["PaperMod"]
 
-author:
-  name: "CenturySee"
-
 params:
-  defaultTheme: auto
+  # author
+  author: "CenturySee"
+  # theme
+  defaultTheme: auto # to switch between dark or light according to browser theme
   disableThemeToggle: false
+
+  # disableThemeToggle: true
   ShowShareButtons: true
   ShowReadingTime: true
-  disableSpecial1stPost: true
+  # disableSpecial1stPost: true
   displayFullLangName: true
   ShowPostNavLinks: true
   ShowBreadCrumbs: true
@@ -20,14 +22,15 @@ params:
   ShowAllPagesInArchive: true
   ShowPageNums: true
   ShowToc: true
-  comments: false
+  # comments: false
   images: ["images/papermod-cover.png"]
-  
+
+
   homeInfoParams:
     Title: 算法·工程·实践
     Content: 专注于算法理论与工程实践的结合，记录从代码实现到业务落地的完整链路。这里有干货，也有思考。
-    
-  socialIcons:
+
+  socialIcons: # optional
     - name: github
       title: View my Github
       url: "https://github.com/CenturySee"
@@ -36,42 +39,45 @@ params:
       url: "https://x.com/xujiu27"
     - name: zhihu
       title: Follow me on zhihu, a chinese tech community like quora
-      url: "https://www.zhihu.com/people/century-see"
+      url: "https://www.zhihu.com/people/century-see"    
     - name: wechat
       title: Follow me on Wechat
       url: "https://weixin.qq.com/r/mp/NhMkPIvEnNbjrc9f90Yk"
+    # - name: KoFi
+    #   title: Buy me a Ko-Fi :)
+    #   url: "https://ko-fi.com/adityatelange"
 
 languages:
   zh-cn:
     languageName: "中文"
     weight: 1
+    taxonomies:
+      category: categories
+      tag: tags
+      series: series
+    menu:
+      main:
+        - name: Archive
+          url: archives
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+        - name: WiKi
+          url: https://github.com/adityatelange/hugo-PaperMod/wiki/
 
-taxonomies:
-  category: categories
-  tag: tags
-  series: series
-
-menu:
-  main:
-    - name: Archive
-      url: archives
-      weight: 5
-    - name: Search
-      url: search/
-      weight: 10
-    - name: Tags
-      url: tags/
-      weight: 10
-    - name: WiKi
-      url: https://github.com/adityatelange/hugo-PaperMod/wiki/
 
 outputs:
   home:
     - HTML
     - RSS
-    - JSON
+    - JSON # necessary for search
+
 
 markup:
   goldmark:
     renderer:
-      unsafe: true
+      unsafe: true  # 允许渲染原始HTML
