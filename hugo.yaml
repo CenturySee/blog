@@ -3,6 +3,9 @@ languageCode: zh-cn
 title: 算法工程笔记
 theme: ["PaperMod"]
 
+author:
+  name: "CenturySee" # 这里填你的名字
+
 params:
   # theme
   defaultTheme: auto # to switch between dark or light according to browser theme
