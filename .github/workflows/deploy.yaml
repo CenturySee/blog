@@ -1,0 +1,45 @@
+name: Deploy Hugo to Display Repo
+
+on:
+  push:
+    branches:
+      - main  # 确保你的主分支叫 main，如果是 master 请修改
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # 1. 拉取源代码
+      - name: Checkout Source
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive  # 极其重要：这会下载 PaperMod 主题文件
+          fetch-depth: 0         # 包含完整的提交历史
+
+      # 2. 安装 Hugo
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: 'latest'
+          extended: true        # PaperMod 建议开启 extended 版本以支持更高阶的 CSS 编译
+
+      # 3. 构建静态页面
+      - name: Build Site
+        run: hugo --minify
+
+      # 4. 发布到展示仓库 (centurysee.github.io)
+      - name: Deploy to Display Repo
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # 使用你在 Secret 中设置的名为 MY_TOKEN 的 PAT
+          personal_token: ${{ secrets.MY_TOKEN }}
+          # 目标展示仓库的全名
+          external_repository: CenturySee/CenturySee.github.io
+          # 目标分支（通常是 main）
+          publish_branch: main
+          # Hugo 默认生成的静态文件目录
+          publish_dir: ./public
+          # 强制覆盖目标仓库的历史（保持展示仓库干净，可选）
+          force_orphan: true
+          # 提交时的说明
+          commit_message: "Rendered by GitHub Actions: ${{ github.event.head_commit.message }}"
