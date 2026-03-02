@@ -25,7 +25,6 @@ params:
   # comments: false
   images: ["images/papermod-cover.png"]
 
-
   homeInfoParams:
     Title: 算法·工程·实践
     Content: 专注于算法理论与工程实践的结合，记录从代码实现到业务落地的完整链路。这里有干货，也有思考。
