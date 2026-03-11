@@ -16,4 +16,5 @@ Welcome.md
 
 # 不忽略的文件
 !*_gemini.md
+!*_gemini_deai.md
 !*/images/*
