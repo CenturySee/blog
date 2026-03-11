@@ -1,6 +1,6 @@
 ---
 title: 哪个大模型跑 OpenClaw 最划算？PinchBench 数据告诉你
-cover: ./images/openclaw_cover.png
+# cover: ./images/openclaw_cover.png
 author: AK27
 source_url: https://pinchbench.com/
 date: "2026-03-10"

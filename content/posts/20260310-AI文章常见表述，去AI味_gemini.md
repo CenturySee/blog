@@ -1,6 +1,6 @@
 ---
 title: AI味太重？这份“去重”指南请收好
-cover: ./images/20260310-AI文章常见表述，去AI味_cover.png
+# cover: ./images/20260310-AI文章常见表述，去AI味_cover.png
 author: AK27
 source_url: https://tropes.fyi/tropes-md
 date: "2026-03-10"

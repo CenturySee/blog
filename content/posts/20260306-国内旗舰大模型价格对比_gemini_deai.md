@@ -1,6 +1,6 @@
 ---
 title: 七家国产大模型API价格横评，谁最值？
-cover: images/20260306-国内旗舰大模型价格对比_cover.png
+# cover: images/20260306-国内旗舰大模型价格对比_cover.png
 author: AK27
 source_url: https://api-docs.deepseek.com/zh-cn/quick_start/pricing
 date: "2026-03-06"
