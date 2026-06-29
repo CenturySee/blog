@@ -1,7 +1,7 @@
 ---
 author: "AK27"
 title: "Agent Harness 第七讲：MCP 集成 —— 外部工具如何接进 harness"
-date: "2026-06-30"
+date: "2026-06-29"
 draft: false
 tags: ["Harness", "Agent", "MCP"]
 categories: ["Harness"]
